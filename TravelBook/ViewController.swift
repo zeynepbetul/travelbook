@@ -61,6 +61,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                     mapView.addAnnotation(annotation)
                     nameTextField.text = annotationTitle
                     commentTextField.text = annotationSubTitle
+                    
+                    locationManager.stopUpdatingLocation()
+                    let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                    let region = MKCoordinateRegion(center: coordinate, span: span)
+                    mapView.setRegion(region, animated: true)
                 }
                 
             } catch {
@@ -80,10 +85,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         mapView.addGestureRecognizer(gestureRecognizer)
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-        let region = MKCoordinateRegion(center: location, span: span)
-        mapView.setRegion(region, animated: true)
+        if selectedTitle == "" {
+            let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
+            let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+            let region = MKCoordinateRegion(center: location, span: span)
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     @objc func chooseLocation(gestureRecognizer: UILongPressGestureRecognizer) {
