@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" id="E78-Ec-LS8"/>
                     <connections>
                         <outlet property="list" destination="4b4-b6-2T1" id="OEn-73-Qqz"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="toViewController" id="7R1-1e-ZEt"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toDetails" id="7R1-1e-ZEt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5M-c3-baO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
