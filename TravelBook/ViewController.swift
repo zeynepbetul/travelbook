@@ -122,7 +122,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             try context.save()
         } catch {
         }
-        
+        NotificationCenter.default.post(name: NSNotification.Name("newPlace"), object: nil)
+        navigationController?.popViewController(animated: true)
     }
     
 
