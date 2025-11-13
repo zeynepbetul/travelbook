@@ -49,6 +49,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             self.mapView.addAnnotation(annotation)
         }
     }
+    @IBAction func saveClicked(_ sender: Any) {
+    }
+    
 
 }
 

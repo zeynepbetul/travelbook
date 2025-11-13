@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7j-C4-BtM">
-                                <rect key="frame" x="0.0" y="259" width="393" height="559"/>
+                                <rect key="frame" x="0.0" y="259" width="393" height="485"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jEn-1e-pbb">
@@ -31,20 +31,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bj4-h1-ESW">
+                                <rect key="frame" x="166" y="767" width="61" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="saveClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Quc-rE-dxM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="u7j-C4-BtM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="1K3-f2-Npu"/>
-                            <constraint firstItem="jEn-1e-pbb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="39" id="27w-Tt-S8k"/>
-                            <constraint firstItem="jEn-1e-pbb" firstAttribute="trailing" secondItem="ikZ-mx-xst" secondAttribute="trailing" id="Biw-cJ-wtk"/>
-                            <constraint firstItem="ikZ-mx-xst" firstAttribute="centerX" secondItem="u7j-C4-BtM" secondAttribute="centerX" id="RfN-Mv-4VS"/>
-                            <constraint firstItem="jEn-1e-pbb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="blL-71-YQH"/>
-                            <constraint firstItem="ikZ-mx-xst" firstAttribute="top" secondItem="jEn-1e-pbb" secondAttribute="bottom" constant="38" id="huD-jM-Wd8"/>
-                            <constraint firstItem="jEn-1e-pbb" firstAttribute="leading" secondItem="ikZ-mx-xst" secondAttribute="leading" id="kkE-Wn-eB2"/>
-                            <constraint firstItem="jEn-1e-pbb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="o5g-wg-3nV"/>
-                            <constraint firstItem="u7j-C4-BtM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ulG-So-06n"/>
-                            <constraint firstItem="u7j-C4-BtM" firstAttribute="top" secondItem="ikZ-mx-xst" secondAttribute="bottom" constant="55" id="vJ7-9W-gGD"/>
+                            <constraint firstItem="jEn-1e-pbb" firstAttribute="trailing" secondItem="ikZ-mx-xst" secondAttribute="trailing" id="CZW-PQ-DeY"/>
+                            <constraint firstItem="jEn-1e-pbb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="39" id="NBf-6d-rO2"/>
+                            <constraint firstItem="bj4-h1-ESW" firstAttribute="top" secondItem="u7j-C4-BtM" secondAttribute="bottom" constant="23" id="PGw-Vh-Pqb"/>
+                            <constraint firstItem="u7j-C4-BtM" firstAttribute="centerX" secondItem="bj4-h1-ESW" secondAttribute="centerX" id="XMh-Lz-f9A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bj4-h1-ESW" secondAttribute="bottom" constant="16" id="Zhd-WW-42N"/>
+                            <constraint firstItem="ikZ-mx-xst" firstAttribute="centerX" secondItem="u7j-C4-BtM" secondAttribute="centerX" id="aYj-tF-QW9"/>
+                            <constraint firstItem="u7j-C4-BtM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oqA-3l-TY5"/>
+                            <constraint firstItem="ikZ-mx-xst" firstAttribute="top" secondItem="jEn-1e-pbb" secondAttribute="bottom" constant="38" id="paa-m4-Djz"/>
+                            <constraint firstItem="jEn-1e-pbb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ufg-08-hBA"/>
+                            <constraint firstItem="jEn-1e-pbb" firstAttribute="leading" secondItem="ikZ-mx-xst" secondAttribute="leading" id="vHO-QO-3lO"/>
+                            <constraint firstItem="u7j-C4-BtM" firstAttribute="top" secondItem="ikZ-mx-xst" secondAttribute="bottom" constant="55" id="xRU-bL-eo8"/>
+                            <constraint firstItem="jEn-1e-pbb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="xci-0f-CBK"/>
                         </constraints>
                     </view>
                     <connections>
