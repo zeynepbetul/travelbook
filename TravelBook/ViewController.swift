@@ -44,8 +44,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             let touchedCoordinates = self.mapView.convert(touchedPoint, toCoordinateFrom: self.mapView)
             let annotation = MKPointAnnotation()
             annotation.coordinate = touchedCoordinates
-            annotation.title = "New Annotation"
-            annotation.subtitle = "Travelbook"
+            annotation.title = nameTextField.text
+            annotation.subtitle = commentTextField.text
             self.mapView.addAnnotation(annotation)
         }
     }
