@@ -19,9 +19,16 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var locationManager = CLLocationManager()
     var chosenLatitude = Double()
     var chosenLongitude = Double()
+    var selectedTitle = ""
+    var selectedTitleID: UUID?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if selectedTitle != "" {
+            let stringUUId = selectedTitleID!.uuidString
+            
+        }
         
         mapView.delegate = self
         locationManager.delegate = self

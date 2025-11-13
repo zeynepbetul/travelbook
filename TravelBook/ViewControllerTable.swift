@@ -13,6 +13,8 @@ class ViewControllerTable: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var list: UITableView!
     var titleArray = [String]()
     var idArray = [UUID]()
+    var chosenTitle = ""
+    var chosenID: UUID?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +54,26 @@ class ViewControllerTable: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @objc func addItem() {
+        chosenTitle = ""
         performSegue(withIdentifier: "toDetails", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titleArray.count
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetails" {
+            let destinationVC = segue.destination as! ViewController
+            destinationVC.selectedTitle = chosenTitle
+            destinationVC.selectedTitleID = chosenID
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenTitle = titleArray[indexPath.row]
+        chosenID = idArray[indexPath.row]
+        performSegue(withIdentifier: "toDetails", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
